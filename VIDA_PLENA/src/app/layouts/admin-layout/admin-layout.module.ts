@@ -33,7 +33,6 @@ import {MatSelectModule} from '@angular/material/select';
   ],
   declarations: [
     DashboardComponent,
-    UserProfileComponent,
     TableListComponent,
     TypographyComponent,
     IconsComponent,

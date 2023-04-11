@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import localeEs from '@angular/common/locales/es'
 import { registerLocaleData } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import {MatNativeDateModule} from '@angular/material/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 registerLocaleData(localeEs, 'es');
 
@@ -21,13 +24,18 @@ registerLocaleData(localeEs, 'es');
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatCardModule,
+    MatNativeDateModule
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-
+    AdminLayoutComponent
   ],
   providers: [{provide: LOCALE_ID, useValue: 'es'}],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [
+    MatCardModule
+  ]
 })
 export class AppModule { }
